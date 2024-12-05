@@ -1,6 +1,6 @@
 package org.example.produkt;
 
-public class Main {
+public class DB {
     public static void main(String[] args) {
         // Create some Produkt objects
         Produkt produkt1 = new Produkt("Laptop", "En kraftfull och smidig bärbar dator.", 10, 12000, 1);
