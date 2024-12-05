@@ -20,11 +20,8 @@ public class Elevator {
 
     public void moveToFloor(int floor) throws InterruptedException {
         openDoors();
-        System.out.print("Doors open, enter elevator.");
-        for (int i = 0; i < 3; i++) {
-            System.out.print(".");
-            Thread.sleep(500);
-        }
+        System.out.print("Enter elevator.");
+
         System.out.println();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter floor nr: \n");
@@ -49,10 +46,12 @@ public class Elevator {
 
     public void openDoors() {
         doorsClosed = false;
+        System.out.println("Doors open");
     }
 
     public void closeDoors() {
         doorsClosed = true;
+        System.out.println("Doors close");
     }
 
     public static void main(String[] args) throws InterruptedException {
