@@ -1,6 +1,5 @@
 package org.example;
 
-import javax.swing.plaf.metal.MetalIconFactory;
 import java.util.Scanner;
 
 public class Elevator {
@@ -18,27 +17,26 @@ public class Elevator {
         this.inTransit = inTransit;
     }
 
-    public void moveToFloor(int floor) throws InterruptedException {
+    public void moveToFloor() throws InterruptedException {
         openDoors();
-
 
         System.out.println();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter floor nr: \n");
-        floor = scanner.nextInt();
+        int floor = scanner.nextInt();
 
         closeDoors();
 
         this.currentFloor = floor;
         inTransit = true;
-        System.out.print("\nTravelling");
+        System.out.print("\nTravelling\n");
          for (int i = 0; i < floor; i++) {
-             System.out.print(".");
-             Thread.sleep(500);
+             System.out.println("floor nr " +(i+1));
+             Thread.sleep(250);
 
          }
 
-         System.out.println("\nArrived");
+         System.out.println("Arrived");
          openDoors();
 
 
@@ -64,6 +62,6 @@ public class Elevator {
 
     public static void main(String[] args) throws InterruptedException {
         Elevator elevator = new Elevator(5, 5, 5, true, false);
-        elevator.moveToFloor(4);
+        elevator.moveToFloor();
     }
 }
